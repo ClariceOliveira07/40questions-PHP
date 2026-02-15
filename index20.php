@@ -22,20 +22,17 @@
 
     <?php
 
+    session_start();
+    if (!isset($_SESSION['cont2000'])) {
+    $_SESSION['cont2000'] = 0;
+    }
     if ($_POST) {
         $valorcarro = $_POST['valor'];
         $anocarro = $_POST['ano'];
         $resposta = strtoupper($_POST['continuar']);
-        $cont = 0;
-        $cont2000 = 0;
-        while ($resposta == "S" or $resposta == "s") {
-            if ($anocarro <= 2000) {
-                $cont2000++;
-            }
-            $cont++;
-        }
         if ($anocarro <= 2000) {
             $porcentagem = 0.12;
+            $_SESSION['cont2000']++;
             echo "Desconto aplicado: 12% <br>";
         } else {
             $porcentagem = 0.07; 
@@ -45,7 +42,7 @@
         $valorfinal = $valorcarro - $valordesconto;
         echo "Valor do desconto: R$ " . $valordesconto . "<br>";
         echo "Valor total a pagar: R$ " . $valorfinal . "<br>";
-        echo "Total de carros até 2000: " . $cont2000 . "<br>";
+        echo "Total de carros até 2000: " . $_SESSION['cont2000'] . "<br>";
         if ($resposta == "N" || $resposta == "n") {
             echo "Encerrando o sistema";
         }

@@ -24,7 +24,7 @@
         foreach ($numeros as $item) {
             $n = trim($item); 
             if (is_numeric($n)) {
-                if ($n >= 10 and $n <= 150) {
+                if ($n >= 10 && $n <= 150) {
                     $cont = $cont + 1;
                 }
             }

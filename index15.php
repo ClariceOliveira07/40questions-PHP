@@ -19,7 +19,7 @@
 
     if ($_POST){
         $valor = $_POST['valor'];
-        if ($valor > 100 and $valor < 200){
+        if ($valor > 100 && $valor < 200){
         echo "O valor $valor é maior que 100 e manor que 200";
         } else{
             echo "O valor $valor não se encontra na sequência entre 100 e 200";
