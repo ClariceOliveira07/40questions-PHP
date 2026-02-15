@@ -33,10 +33,10 @@
             $sexo = isset($listas[$indice]) ? strtoupper(trim($listas[$indice])) : "";
             if ($nome != "") {
                 $cont++;
-            if ($sexo == "M" || $sexo == "m") {
+            if ($sexo == "M") {
                 echo "Pessoa $cont: $nome - Homem <br>";
                 $hom++;
-            } elseif ($sexo == "F" || $sexo == "f") {
+            } elseif ($sexo == "F") {
                 echo "Pessoa $cont: $nome - Mulher <br>";
                 $mul++;
             } else {

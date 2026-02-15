@@ -39,7 +39,7 @@
             echo "Menção: Aprovado";
         } elseif ($media <= 5){
             echo "Menção: Reprovado";
-        } elseif ($media > 5.1 and $media < 6.9){
+        } elseif ($media > 5.1 && $media < 6.9){
             echo "Menção: Recuperação";
         }
     }

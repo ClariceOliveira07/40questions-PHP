@@ -43,7 +43,7 @@
         echo "Valor do desconto: R$ " . $valordesconto . "<br>";
         echo "Valor total a pagar: R$ " . $valorfinal . "<br>";
         echo "Total de carros até 2000: " . $_SESSION['cont2000'] . "<br>";
-        if ($resposta == "N" || $resposta == "n") {
+        if ($resposta == "N") {
             echo "Encerrando o sistema";
         }
     }
