@@ -32,22 +32,22 @@
         $valor = (float)$_POST['valor'];
         $combustivel = $_POST['comb'];
         if ($valor <= 0) {
-            echo "Total de Descontos: R$ " . $_SESSION['totaldesconto'] . "<br>";
-            echo "Total Pago pelos clientes: R$ " . $_SESSION['totalpago'] . "<br>";
+            echo "Total de descontos: R$ " . $_SESSION['totaldesconto'] . "<br>";
+            echo "Total pago pelos clientes: R$ " . $_SESSION['totalpago'] . "<br>";
             $percentual = 0;
-        if ($combustivel == "alcool") {
-            $percentual = 0.25;
-        } elseif ($combustivel == "gasolina") {
-            $percentual = 0.21;
-        } elseif ($combustivel == "diesel") {
-            $percentual = 0.14;
-        }
+            if ($combustivel == "alcool") {
+                $percentual = 0.25;
+            } elseif ($combustivel == "gasolina") {
+                $percentual = 0.21;
+            } elseif ($combustivel == "diesel") {
+                $percentual = 0.14;
+            }
         $valordesconto = $valor * $percentual;
         $valorfinal = $valor - $valordesconto;
         $_SESSION['totaldesconto'] += $valordesconto;
         $_SESSION['totalpago'] += $valorfinal;
-        echo "Valor do Desconto: R$ " . $valordesconto . "<br>";
-        echo "Valor a Pagar: R$ " . $valorfinal . "<br>";
+        echo "Valor do desconto: R$ " . $valordesconto . "<br>";
+        echo "Valor a pagar: R$ " . $valorfinal . "<br>";
         }
     }
 
