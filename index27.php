@@ -10,7 +10,7 @@
         <label>Valor do veículo:</label>
         <input type="number" name="valor" step="0.01">
         <br>
-        <label>Combstível:</label>
+        <label>Combustível:</label>
         <select name="comb">
             <option value="alcool">Álcool (25%)</option>
             <option value="gasolina">Gasolina (21%)</option>
@@ -28,12 +28,11 @@
         $_SESSION['totaldesconto'] = 0;
         $_SESSION['totalpago'] = 0;
     }
-
     if ($_POST) {
         $valor = (float)$_POST['valor'];
         $combustivel = $_POST['comb'];
         if ($valor <= 0) {
-            echo "Total de Descontos concedidos: R$ " . $_SESSION['totaldesconto'] . "<br>";
+            echo "Total de Descontos: R$ " . $_SESSION['totaldesconto'] . "<br>";
             echo "Total Pago pelos clientes: R$ " . $_SESSION['totalpago'] . "<br>";
             $percentual = 0;
         if ($combustivel == "alcool") {
@@ -47,8 +46,8 @@
         $valorfinal = $valor - $valordesconto;
         $_SESSION['totaldesconto'] += $valordesconto;
         $_SESSION['totalpago'] += $valorfinal;
-        echo "Valor do Desconto: R$ " . $valor_desconto . "<br>";
-        echo "Valor a Pagar: R$ " . $valor_final . "<br>";
+        echo "Valor do Desconto: R$ " . $valordesconto . "<br>";
+        echo "Valor a Pagar: R$ " . $valorfinal . "<br>";
         }
     }
 
