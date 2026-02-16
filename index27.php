@@ -31,9 +31,7 @@
     if ($_POST) {
         $valor = (float)$_POST['valor'];
         $combustivel = $_POST['comb'];
-        if ($valor <= 0) {
-            echo "Total de descontos: R$ " . $_SESSION['totaldesconto'] . "<br>";
-            echo "Total pago pelos clientes: R$ " . $_SESSION['totalpago'] . "<br>";
+        if ($valor > 0) {
             $percentual = 0;
             if ($combustivel == "alcool") {
                 $percentual = 0.25;
@@ -48,6 +46,7 @@
         $_SESSION['totalpago'] += $valorfinal;
         echo "Valor do desconto: R$ " . $valordesconto . "<br>";
         echo "Valor a pagar: R$ " . $valorfinal . "<br>";
+        session_destroy();
         }
     }
 
